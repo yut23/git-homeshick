@@ -22,6 +22,7 @@
   ci = commit --verbose
   cma = commit -a -m
   ca = commit -a
+  cv = commit -a -v
   caa = commit -a --amend -C HEAD
   filelog = log -u
   fl = log -u
