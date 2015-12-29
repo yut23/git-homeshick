@@ -11,6 +11,7 @@
   fileMode = false
   excludesfile = ~/.gitignore_global
 	autocrlf = false
+  editor = gvim -f
 [push]
   default = upstream
 [alias]
