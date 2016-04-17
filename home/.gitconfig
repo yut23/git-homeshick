@@ -129,4 +129,8 @@
 [mergetool]
   keepBackup = false
 [mergetool "meld"]
-  path = /usr/local/bin/meld
+  path = /usr/bin/meld
+[diff]
+	tool = gvimdiff
+[difftool]
+	prompt = false

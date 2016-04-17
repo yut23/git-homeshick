@@ -1,6 +1,6 @@
 # VIm
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
+[._]*.sw[op]
+[._]sw[op]
 *.un~
 Session.vim
 .netrwhist
@@ -35,7 +35,7 @@ $RECYCLE.BIN/
 *.exe
 *.o
 *.so
- 
+
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
@@ -48,7 +48,7 @@ $RECYCLE.BIN/
 *.rar
 *.tar
 *.zip
- 
+
 # Logs and databases #
 ######################
 *.log
