@@ -54,6 +54,8 @@
   dr  = "!f() { git diff -w "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
   diffr  = "!f() { git diff "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
   branch = branch -ra
+  #difftool
+  dt = difftool --word-diff
 
   #reset commands
   r = reset
