@@ -10,8 +10,8 @@
 [core]
   fileMode = false
   excludesfile = ~/.gitignore_global
-	autocrlf = false
-  editor = gvim -f
+  autocrlf = false
+  editor = nvim-qt --nofork --
 [push]
   default = upstream
 [alias]
@@ -31,7 +31,7 @@
   ai = add --interactive
 
   co = checkout
-  br = branch 
+  br = branch
   #"!git branch -ra | grep -v done"
   bra = branch -ra
   #list commands
@@ -104,7 +104,7 @@
   lap = "!f() { git --git-dir=$1 format-patch -k -1 --stdout $2 | git am -3 -k; }; f"
 
   #subtree add
-  sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f" 
+  sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
   # initial empty commit
   empty = "!git commit -am\"[empty] Initial commit\" --allow-empty"
 
@@ -133,10 +133,11 @@
 [mergetool "meld"]
   path = /usr/bin/meld
 [diff]
-	tool = gvimdiff
+  tool = vimdiff3
 [difftool]
-	prompt = false
+  path = nvim
+  prompt = false
 [gui]
-	fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	tabsize = 4
+  fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+  fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+  tabsize = 4
