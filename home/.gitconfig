@@ -12,7 +12,6 @@
   excludesfile = ~/.gitignore_global
   autocrlf = false
   editor = nvim-qt --nofork --
-  pager = vimpager -c 'set foldmethod=syntax' -c 'set filetype=git'
 [push]
   default = upstream
 [alias]
