@@ -67,7 +67,7 @@
   #stash
   sl = stash list
   sa = stash apply
-  ss = stash save
+  sp = stash push
 
   cp = cherry-pick
   grep = grep -Ii
