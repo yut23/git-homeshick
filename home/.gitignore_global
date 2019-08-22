@@ -4,6 +4,8 @@
 *.un~
 Session.vim
 .netrwhist
+# local vimrc
+.lvimrc
 
 # Backups
 *~
@@ -26,6 +28,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# JetBrains project files
+.idea/
+
+# Compilation databases
+compile_commands.json
 
 # Compiled source #
 ###################
