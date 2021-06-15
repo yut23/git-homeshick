@@ -73,3 +73,24 @@ __pycache__/
 
 # mypy
 .mypy_cache/
+
+# testing
+.pytest_cache/
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local build stuff
+.last_rebuild
+.local_dependencies
+
+# zsh environment
+.autoenv.zsh
+
+# ccls
+.ccls-cache
+
+# zinit
+._zinit
+*.zsh.zwc
