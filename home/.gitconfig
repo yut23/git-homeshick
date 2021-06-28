@@ -11,7 +11,7 @@
   fileMode = false
   excludesfile = ~/.gitignore_global
   autocrlf = false
-  editor = nvim-qt --nofork --
+  editor = $VISUAL
   attributesfile = ~/.gitattributes
 [push]
   default = upstream
@@ -133,10 +133,11 @@
 [mergetool "meld"]
   path = /usr/bin/meld
 [diff]
-  tool = vimdiff3
+  tool = vimdiff
 [difftool]
-  path = nvim
   prompt = false
+[difftool "vimdiff"]
+  path = $EDITOR
 [gui]
   fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
   fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
