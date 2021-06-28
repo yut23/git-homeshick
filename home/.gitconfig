@@ -12,6 +12,7 @@
   excludesfile = ~/.gitignore_global
   autocrlf = false
   editor = nvim-qt --nofork --
+  attributesfile = ~/.gitattributes
 [push]
   default = upstream
 [alias]
@@ -140,3 +141,15 @@
   fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
   fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
   tabsize = 4
+
+[diff "zip"]
+  textconv = ~/bin/lib/zip_textconv.py
+[diff "ooxml"]
+  textconv = ~/bin/lib/zip_textconv.py
+  wordRegex = "[^-<>= */+[:space:]]+"
+[diff "csv"]
+  wordRegex = "[^[:space:],]+"
+[diff "python"]
+  wordRegex = "[a-zA-Z_][a-zA-Z0-9_]*|[-+0-9.e]+[jJlL]?|0[xX]?[0-9a-fA-F]+[lL]?|[-+*/<>%&^|=!]?=|//=?|<<=?|>>=?|\\*\\*=?|##*"
+;[diff "java"]
+;  wordRegex = "[a-zA-Z_][a-zA-Z0-9_]|[-+0-9.e]+[fFlL]?|0[xXbB]?[0-9a-fA-F]+[lL]?|[-+*/<>%&^|=-|\\+\\+|<<=?|>>>?=?|&&|\\|\\|"
