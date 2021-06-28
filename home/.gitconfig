@@ -36,15 +36,14 @@
   bra = branch -ra
   #list commands
   le = log --oneline --decorate
-  ll = log --pretty=format:"%C(yellow)%h%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%cn]%C(reset)" --decorate --numstat
-  ls1 = log --pretty=format:"%C(yellow)%h%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%cn]%C(reset)" --decorate
-  lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%cn]%C(reset)" --decorate --date=short --graph
-  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%cn]%C(reset)" --decorate --date=relative
+  ll = log --pretty=format:"%C(yellow)%h%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --numstat
+  ls1 = log --pretty=format:"%C(yellow)%h%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate
+  lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --date=short --graph
+  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --date=relative
   lc  = "!f() { git ll "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
   #list all aliases
   la = "!git config -l | grep alias | cut -c 7-"
-  diff = diff --word-diff
   d = diff --word-diff
   dc = diff --cached
   #list modified files in last commit
