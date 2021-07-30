@@ -81,6 +81,9 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
 # Local build stuff
 .last_rebuild
 .local_dependencies
