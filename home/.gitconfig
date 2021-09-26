@@ -41,7 +41,7 @@
   ls1 = log --pretty=format:"%C(yellow)%h%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate
   lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --date=short --graph
   ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%C(red\\ bold)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --date=relative
-  lc  = "!f() { git ll "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
+  lc = "!f() { git ll "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
   #list all aliases
   la = "!git config -l | grep alias | cut -c 7-"
@@ -51,8 +51,8 @@
   dl = "!git ll -1"
   #diff last commit
   dlc = diff --cached HEAD^
-  dr  = "!f() { git diff -w "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
-  diffr  = "!f() { git diff "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
+  dr = "!f() { git diff -w "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
+  diffr = "!f() { git diff "${1:-HEAD}"^.."${1:-HEAD}"; }; f"
   #difftool
   dt = difftool --word-diff
 
@@ -72,8 +72,8 @@
   cp = cherry-pick
   grep = grep -Ii
   gr = grep -Ii
-  #grep from root folder
-  gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+  #grep from root folder (https://stackoverflow.com/a/10868614)
+  gra = "!git grep"
 
   #grep on filename
   f = "!git ls-files | grep -i"
@@ -107,9 +107,6 @@
   sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
   # initial empty commit
   empty = "!git commit -am\"[empty] Initial commit\" --allow-empty"
-
-  #add bitbucket remote
-  ra = "!f() { git remote add $1 https://bitbucket.org/$2.git; }; f"
 
   # Github flow aliases from http://haacked.com/archive/2014/07/28/github-flow-aliases/
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
