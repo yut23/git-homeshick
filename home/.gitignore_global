@@ -71,6 +71,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# pip editable install files
+*.egg-info/
+
 # mypy
 .mypy_cache/
 
