@@ -9,7 +9,7 @@
   status = true
 [core]
   fileMode = false
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
   autocrlf = false
   editor = $VISUAL
   attributesfile = ~/.gitattributes
