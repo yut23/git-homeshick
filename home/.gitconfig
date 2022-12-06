@@ -131,6 +131,7 @@
   statusHints = false
 [mergetool]
   keepBackup = false
+  prompt = false  # added by `nbdime config-git --global --enable`
 [mergetool "meld"]
   path = /usr/bin/meld
 [diff]
@@ -169,3 +170,14 @@
   pushInsteadOf = https://bitbucket.org
 [url "ssh://git@gitlab.com"]
   pushInsteadOf = https://gitlab.com
+
+# nbdime jupyter notebook integration
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
