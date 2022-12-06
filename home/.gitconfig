@@ -14,10 +14,11 @@
   editor = $VISUAL
   attributesfile = ~/.gitattributes
 [push]
-  default = upstream
+  default = current
 [alias]
   # Aliases from https://github.com/durdn/cfg
   st = status
+  sti = status --ignored
 
   cl = clone
 
@@ -123,6 +124,9 @@
   unstage = reset HEAD --
 
   cmv = !git add -A && git commit -v
+
+  # this lets me get a PR as `git fetch-pr 7` (creates branch `pr/7`) then `git checkout pr/7`
+  fetch-pr = "!f() { git fetch origin +pull/$1/head:pr/$1; }; f"
 [advice]
   statusHints = false
 [mergetool]
