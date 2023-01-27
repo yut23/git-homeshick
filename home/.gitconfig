@@ -171,6 +171,12 @@
 [url "ssh://git@gitlab.com"]
   pushInsteadOf = https://gitlab.com
 
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
 # nbdime jupyter notebook integration
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
