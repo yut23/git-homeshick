@@ -98,7 +98,10 @@ __pycache__/
 .autoenv.zsh
 
 # ccls
-.ccls-cache
+.ccls-cache/
+
+# clangd
+.cache/clangd/
 
 # zinit
 ._zinit
