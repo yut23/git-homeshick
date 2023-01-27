@@ -102,4 +102,4 @@ __pycache__/
 
 # zinit
 ._zinit
-*.zsh.zwc
+*.zwc
