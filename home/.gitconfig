@@ -4,11 +4,9 @@
 [merge]
   tool = meld
 [color]
-  ui = auto
   ui = true
   status = true
 [core]
-  fileMode = false
   excludesfile = ~/.gitignore
   autocrlf = false
   editor = $VISUAL
@@ -162,6 +160,7 @@
   ff = only
 [init]
   defaultBranch = main
+  templateDir = ~/.git_templates
 
 # automatically use ssh when pushing to these sites
 [url "ssh://git@github.com"]
