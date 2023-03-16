@@ -160,7 +160,7 @@
   ff = only
 [init]
   defaultBranch = main
-  templateDir = ~/.git_templates
+  templateDir = ~/.homesick/repos/git/home/.git_templates
 
 # automatically use ssh when pushing to these sites
 [url "ssh://git@github.com"]
