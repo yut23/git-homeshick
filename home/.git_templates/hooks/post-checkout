@@ -30,7 +30,7 @@ done
 for (( index=${#configFiles[@]}-1 ; index>=0 ; index-- )) ; do
     gitconfig="${configFiles[index]}"
 
-    echo "* From $gitconfig:"
+    printed_source=n
     # Iterate over each line in found .gitconfig file
     output=$(git config --file "$gitconfig" --list)
     while IFS= read -r line
@@ -42,6 +42,10 @@ for (( index=${#configFiles[@]}-1 ; index>=0 ; index-- )) ; do
         parentValue=$(git config "$key")
         if [ "$parentValue" != "$localValue" ]
         then
+            if [ "$printed_source" = n ]; then
+                echo "* From $gitconfig:"
+                printed_source=y
+            fi
             echo "  * $key: $localValue (overrides $parentValue)"
             git config "$key" "$localValue"
         fi
