@@ -125,6 +125,8 @@
 
   # this lets me get a PR as `git fetch-pr 7` (creates branch `pr/7`) then `git checkout pr/7`
   fetch-pr = "!f() { git fetch origin +pull/$1/head:pr/$1; }; f"
+
+  fa = fetch --all -p
 [advice]
   statusHints = false
 [mergetool]
