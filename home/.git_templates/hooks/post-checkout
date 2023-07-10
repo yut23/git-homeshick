@@ -4,9 +4,12 @@
 # https://stackoverflow.com/a/40450106
 
 # Check for custom git-config flag, to execute hook only once on clone, not repeatedly on every checkout
-if grep -q "inferredConfig" .git/config
+if [[ -f .git/config ]]
 then
-    exit
+    grep -q "inferredConfig" .git/config && exit
+else
+    # probably a submodule or worktree, fall back to git config (exits non-zero if unset)
+    git config user.inferredConfig >/dev/null && exit
 fi
 
 # Automatically set Git config values from parent folders.
