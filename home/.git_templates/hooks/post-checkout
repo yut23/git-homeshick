@@ -13,7 +13,6 @@ else
 fi
 
 # Automatically set Git config values from parent folders.
-echo "Infer Git configuration from directory..."
 
 # Go upwards in directory hierarchy, examine all .gitconfig files we find
 # Allows to have multiple nested .gitconfig files with different scopes
@@ -29,6 +28,7 @@ do
     fi
 done
 
+printed_header=n
 # Iterate through configFiles array in reverse order, so that more local configurations override parent ones
 for (( index=${#configFiles[@]}-1 ; index>=0 ; index-- )) ; do
     gitconfig="${configFiles[index]}"
@@ -46,6 +46,10 @@ for (( index=${#configFiles[@]}-1 ; index>=0 ; index-- )) ; do
         if [ "$parentValue" != "$localValue" ]
         then
             if [ "$printed_source" = n ]; then
+                if [ "$printed_header" = n ]; then
+                    echo "Infer Git configuration from directory..."
+                    printed_header=y
+                fi
                 echo "* From $gitconfig:"
                 printed_source=y
             fi
