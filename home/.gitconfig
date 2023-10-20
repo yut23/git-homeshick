@@ -10,7 +10,8 @@
   excludesfile = ~/.gitignore
   autocrlf = false
   editor = $VISUAL
-  attributesfile = ~/.gitattributes
+  # this is the default location
+  attributesfile = ~/.config/git/attributes
 [push]
   default = current
 [alias]
