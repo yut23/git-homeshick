@@ -1,8 +1,6 @@
 [user]
   email = yut23@gvljohnsons.com
   name = yut23
-[merge]
-  tool = meld
 [color]
   ui = true
   status = true
@@ -12,8 +10,13 @@
   editor = $VISUAL
   # this is the default location
   attributesfile = ~/.config/git/attributes
+[init]
+  defaultBranch = main
+  templateDir = ~/.homesick/repos/git/home/.git_templates
 [push]
   default = current
+[pull]
+  ff = only
 [alias]
   # Aliases from https://github.com/durdn/cfg
   st = status
@@ -130,6 +133,21 @@
   fa = fetch --all -p
 [advice]
   statusHints = false
+[gui]
+  fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+  fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+  tabsize = 4
+
+# automatically use ssh when pushing to these sites
+[url "ssh://git@github.com"]
+  pushInsteadOf = https://github.com
+[url "ssh://git@bitbucket.org"]
+  pushInsteadOf = https://bitbucket.org
+[url "ssh://git@gitlab.com"]
+  pushInsteadOf = https://gitlab.com
+
+[merge]
+  tool = meld
 [mergetool]
   keepBackup = false
   prompt = false  # added by `nbdime config-git --global --enable`
@@ -141,10 +159,6 @@
   prompt = false
 [difftool "vimdiff"]
   path = $EDITOR
-[gui]
-  fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-  fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-  tabsize = 4
 
 [diff "zip"]
   textconv = ~/bin/lib/zip_textconv.py
@@ -159,19 +173,6 @@
 ;  wordRegex = "[a-zA-Z_][a-zA-Z0-9_]|[-+0-9.e]+[fFlL]?|0[xXbB]?[0-9a-fA-F]+[lL]?|[-+*/<>%&^|=-|\\+\\+|<<=?|>>>?=?|&&|\\|\\|"
 [diff "actionscript"]
   xfuncname = "^[\t ]*(((internal|private|protected|public|static|final|override)[\t ]+)*function.*)$|^[\t ]*((((dynamic|final|internal|public)[\t ]+)?class|interface).*)$|^[\t ]*(package.*)$"
-[pull]
-  ff = only
-[init]
-  defaultBranch = main
-  templateDir = ~/.homesick/repos/git/home/.git_templates
-
-# automatically use ssh when pushing to these sites
-[url "ssh://git@github.com"]
-  pushInsteadOf = https://github.com
-[url "ssh://git@bitbucket.org"]
-  pushInsteadOf = https://bitbucket.org
-[url "ssh://git@gitlab.com"]
-  pushInsteadOf = https://gitlab.com
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
