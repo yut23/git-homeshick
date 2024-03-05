@@ -101,7 +101,7 @@ __pycache__/
 .ccls-cache/
 
 # clangd
-.cache/clangd/
+**/.cache/clangd/
 
 # zinit
 ._zinit
