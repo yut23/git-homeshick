@@ -38,6 +38,8 @@
   br = branch
   #"!git branch -ra | grep -v done"
   bra = branch -ra
+  # list branches from oldest to newest
+  bt = branch -vv --sort committerdate
   #list commands
   le = log --oneline --decorate
   ll = log --pretty=tformat:"%C(yellow)%h%C(auto)%d\\ %C(reset)%s%C(blue\\ bold)\\ [%an]%C(reset)" --decorate --numstat
