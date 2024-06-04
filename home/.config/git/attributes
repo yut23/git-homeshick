@@ -3,6 +3,7 @@
 *.py diff=python
 *.java diff=java
 *.as diff=actionscript
+*.zip diff=zip
 
 *.ipynb	diff=jupyternotebook
 *.ipynb	merge=jupyternotebook

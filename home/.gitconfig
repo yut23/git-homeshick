@@ -164,9 +164,11 @@
 
 [diff "zip"]
   textconv = ~/bin/lib/zip_textconv.py
+  xfuncname = "^File: .*$"
 [diff "ooxml"]
   textconv = ~/bin/lib/zip_textconv.py
   wordRegex = "[^-<>= */+[:space:]]+"
+  xfuncname = "^File: .*$"
 [diff "csv"]
   wordRegex = "[^[:space:],]+"
 [diff "python"]
