@@ -149,6 +149,9 @@
   pushInsteadOf = https://gitlab.com
 
 [merge]
+  # add a ||||||| marker and the original text (i.e. last common ancestor)
+  # before the ======= marker
+  conflictStyle = diff3
   tool = meld
 [mergetool]
   keepBackup = false
