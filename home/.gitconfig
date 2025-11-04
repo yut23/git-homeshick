@@ -187,6 +187,9 @@
   process = git-lfs filter-process
   required = true
 
+[include]
+  path = .gitconfig.local
+
 # nbdime jupyter notebook integration
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
