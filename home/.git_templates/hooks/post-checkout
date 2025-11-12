@@ -34,12 +34,20 @@ for (( index=${#configFiles[@]}-1 ; index>=0 ; index-- )) ; do
     gitconfig="${configFiles[index]}"
 
     printed_source=n
-    # Iterate over each line in found .gitconfig file
-    output=$(git config --file "$gitconfig" --list)
+    # Iterate over each line in found .gitconfig file, in reverse
+    output=$(git config --includes --file "$gitconfig" --list | tac)
+    # Keep track of keys we've already seen, so we can skip overridden entries
+    declare -A seen_keys=()
     while IFS= read -r line
     do
         # Split line into two parts, separated by '='
         IFS='=' read -r key localValue <<< "$line"
+
+        if [[ -v seen_keys["$key"] ]]; then
+            # Entry is overridden later in the file
+            continue
+        fi
+        seen_keys["$key"]=1
 
         # For values that differ from the parent Git configuration, adjust the local one
         parentValue=$(git config "$key")
