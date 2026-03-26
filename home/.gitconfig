@@ -127,12 +127,14 @@
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   unstage = reset HEAD --
 
+  # Personal aliases
   cmv = !git add -A && git commit -v
 
   # this lets me get a PR as `git fetch-pr 7` (creates branch `pr/7`) then `git checkout pr/7`
   fetch-pr = "!f() { git fetch origin +pull/$1/head:pr/$1; }; f"
 
   fa = fetch --all -p
+  wt = worktree
 [advice]
   statusHints = false
 [gui]
