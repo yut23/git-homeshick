@@ -135,6 +135,8 @@
 
   fa = fetch --all -p
   wt = worktree
+  # Run any git command from the repository root
+  from-root = "!git"
 [advice]
   statusHints = false
 [gui]
