@@ -57,6 +57,7 @@ compile_commands.json
 *.tar
 *.zip
 *.xz
+*.zst
 
 # Logs and databases #
 ######################
