@@ -147,6 +147,8 @@
 # automatically use ssh when pushing to these sites
 [url "ssh://git@github.com"]
   pushInsteadOf = https://github.com
+[url "ssh://git@gist.github.com"]
+  pushInsteadOf = https://gist.github.com
 [url "ssh://git@bitbucket.org"]
   pushInsteadOf = https://bitbucket.org
 [url "ssh://git@gitlab.com"]
