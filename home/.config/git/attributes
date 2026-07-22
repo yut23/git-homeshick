@@ -4,6 +4,8 @@
 *.java diff=java
 *.as diff=actionscript
 *.zip diff=zip
+*.dts diff=dts
+*.dtsi diff=dts
 
 *.ipynb	diff=jupyternotebook
 *.ipynb	merge=jupyternotebook
