@@ -6,6 +6,8 @@
 *.zip diff=zip
 *.dts diff=dts
 *.dtsi diff=dts
+*.dtb diff=dtb
+*.dtbo diff=dtb
 
 *.ipynb	diff=jupyternotebook
 *.ipynb	merge=jupyternotebook
