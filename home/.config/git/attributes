@@ -8,6 +8,7 @@
 *.dtsi diff=dts
 *.dtb diff=dtb
 *.dtbo diff=dtb
+*.nbt diff=nbt
 
 *.ipynb	diff=jupyternotebook
 *.ipynb	merge=jupyternotebook
