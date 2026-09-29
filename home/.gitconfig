@@ -71,7 +71,10 @@
   ;rh2 = reset HEAD^^ --hard
 
   #stash
-  sl = stash list
+  # * include date in listing
+  # * use --pretty=format: instead of --format= so adding --stat puts a blank
+  #   line between stash entries, instead of between the info line and diffstat
+  sl = stash list --pretty=format:'%C(green)%<(10)%gd %C(yellow)[%ah]%C(reset) %gs'
   sa = stash apply
   sp = stash push
 
